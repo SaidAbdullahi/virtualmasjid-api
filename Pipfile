@@ -1,0 +1,49 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pytz = ">=2018.7"
+django-configurations = "*"
+gunicorn = "*"
+newrelic = "*"
+"psycopg2-binary" = "*"
+dj-database-url = "*"
+django-model-utils = "*"
+django-unique-upload = "*"
+djangorestframework = "*"
+django-filter = "*"
+django-storages = "*"
+"boto3" = "*"
+Django = ">=2.2.0"
+Markdown = "*"
+django-nose = "*"
+django-timezone-field = "*"
+django-countries = "*"
+"beautifulsoup4" = "*"
+lxml = "*"
+requests = "*"
+celery = {extras = ["redis"],version = ">=4.3.0"}
+django-celery-beat = "*"
+django-cors-headers = "*"
+pylibmc = "*"
+django-bmemcached = "*"
+python-binary-memcached = "*"
+python-twitter = "*"
+django-heroku = "*"
+
+[dev-packages]
+ipdb = "*"
+ipython = "*"
+pylint = "*"
+"flake8" = "*"
+mock = "*"
+nose-progressive = "*"
+coverage = "*"
+factory_boy = "*"
+pylint-django = "*"
+responses = "*"
+
+[requires]
+python_version = "3.7"
