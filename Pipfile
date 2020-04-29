@@ -31,7 +31,6 @@ pylibmc = "*"
 django-bmemcached = "*"
 python-binary-memcached = "*"
 python-twitter = "*"
-django-heroku = "*"
 
 [dev-packages]
 ipdb = "*"

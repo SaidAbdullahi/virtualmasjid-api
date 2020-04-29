@@ -237,9 +237,6 @@ class Common(Configuration):
 
     # Default Venue time zone
     DEFAULT_VENUE_TIME_ZONE = 'Africa/Nairobi'
-    
-    import django_heroku
-    django_heroku.settings(locals())
 
     # # Celery info
     # CELERY_BROKER_URL = os.environ.get('REDIS_URL', 'redis://redis:6379/')
