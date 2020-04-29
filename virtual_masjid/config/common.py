@@ -69,10 +69,10 @@ class Common(Configuration):
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
     ADMINS = (
-        ('Author', 'said.abdullahi.sk@gmail.com'),
+        ('Author', ''),
     )
 
-    Postgres
+    # Postgres
     DATABASES = {
         'default': dj_database_url.config(
             default='postgres://postgres:@postgres:5432/postgres',
