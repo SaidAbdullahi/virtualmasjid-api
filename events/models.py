@@ -5,15 +5,18 @@ class Event(models.Model):
     venue = models.ForeignKey(
         'venues.Venue', models.CASCADE, related_name='events',
     )
+    class Recurrence(models.TextChoices):
+        ONCE =  "Once"
+        DAILY =  "Daily"
+        WEEKLY = "Weekly"
+        BIWEEKLY = "Biweekly"
+        MONTHLY = "Monthly"
 
-    RECURRENCE_CHOICES = (
-        (0, 'None'),
-        (1, 'Daily'),
-        (7, 'Weekly'),
-        (14, 'Biweekly'),
-        (28, 'Monthly')
+    frequency = models.CharField(
+        max_length=10,
+        choices=Recurrence.choices,
+        default=Recurrence.ONCE
     )
-    frequency = models.IntegerField(choices=RECURRENCE_CHOICES)
     eventTime = models.TimeField()
     startDate = models.DateField()
     endDate = models.DateField()
@@ -25,10 +28,5 @@ class Event(models.Model):
     qa_allowed = models.BooleanField(default=False)
     is_live = models.BooleanField(default=True)
 
-    # class Meta:
-    #     indexes = [
-    #         models.Index(fields=['venue', 'startDate']),
-    #         models.Index(fields=['venue', 'endDate']),
-    #     ]
     def __str__(self):
         return self.title

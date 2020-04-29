@@ -3,7 +3,7 @@ import os
 from celery import Celery
 
 # set the default Django settings module for the 'celery' program.
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'hsv_dot_beer.config')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'virtual_masjid.config')
 os.environ.setdefault("DJANGO_CONFIGURATION", "Local")
 
 from configurations import importer  # noqa: E402 isort:skip

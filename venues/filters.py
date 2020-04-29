@@ -18,19 +18,17 @@ class VenueFilterSet(FilterSet):
 
     o = OrderingFilter(
         fields=[
-            'name', 'taps__beer__name'
-            'taps__beer__style__name',
-            'taps__beer__style__alternate_names__name',
-            'on_downtown_craft_beer_trail',
+            'name', 'city', 'events__title'
+            'events__speaker', 'events__language',
         ],
     )
 
     class Meta:
         fields = {
             'name': DEFAULT_STRING_FILTER_OPERATORS,
-            'taps__beer__name': DEFAULT_STRING_FILTER_OPERATORS,
-            'taps__beer__style__name': DEFAULT_STRING_FILTER_OPERATORS,
-            'taps__beer__style__alternate_names__name': DEFAULT_STRING_FILTER_OPERATORS,
-            'on_downtown_craft_beer_trail': ['exact'],
+            'city': DEFAULT_STRING_FILTER_OPERATORS,
+            'events__title': DEFAULT_STRING_FILTER_OPERATORS,
+            'events__speaker': DEFAULT_STRING_FILTER_OPERATORS,
+            'events__language': DEFAULT_STRING_FILTER_OPERATORS,
         }
         model = models.Venue

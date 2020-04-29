@@ -13,4 +13,3 @@ class VenueAPIConfigurationAdmin(admin.ModelAdmin):
 
 
 admin.site.register(models.Venue, VenueAdmin)
-admin.site.register(models.VenueAPIConfiguration, VenueAPIConfigurationAdmin)

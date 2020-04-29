@@ -6,19 +6,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 class Local(Common):
     DEBUG = True
 
-    # Testing
-    INSTALLED_APPS = Common.INSTALLED_APPS
-    INSTALLED_APPS += ('django_nose',)
-    TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
-    NOSE_ARGS = [
-        os.path.dirname(BASE_DIR),
-        '--with-coverage',
-        '--with-progressive',
-        '--cover-package=hsv_dot_beer',
-        '--cover-package=venues',
-        '--cover-package=beers',
-        '--cover-package=tap_list_providers',
-    ]
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('dbname'),
+        'USER': os.environ.get('dbuser'),
+        'PASSWORD': os.environ.get('dbpass'),
+        'HOST': os.environ.get('dbhost'),
+        'PORT': os.environ.get('dbport')
+        }
+    }
 
     # Mail
     EMAIL_HOST = 'localhost'

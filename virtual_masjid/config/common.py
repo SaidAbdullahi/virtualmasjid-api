@@ -30,10 +30,6 @@ class Common(Configuration):
         'virtual_masjid.users',
         'venues',
         'events',
-        'beers',
-        'taps',
-        'tap_list_providers',
-        
     )
 
     # https://docs.djangoproject.com/en/2.0/topics/http/middleware/
@@ -80,16 +76,6 @@ class Common(Configuration):
             conn_max_age=int(os.getenv('POSTGRES_CONN_MAX_AGE', 600))
         )
     }
-    # DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': os.environ.get('dbname'),
-    #     'USER': os.environ.get('dbuser'),
-    #     'PASSWORD': os.environ.get('dbpass'),
-    #     'HOST': os.environ.get('dbhost'),
-    #     'PORT': os.environ.get('dbport')
-    #     }
-    # }
 
     # General
     APPEND_SLASH = False
@@ -238,16 +224,3 @@ class Common(Configuration):
 
     # Default Venue time zone
     DEFAULT_VENUE_TIME_ZONE = 'Africa/Nairobi'
-
-    # # Celery info
-    # CELERY_BROKER_URL = os.environ.get('REDIS_URL', 'redis://redis:6379/')
-    # CELERY_RESULT_BACKEND = CELERY_BROKER_URL
-    # CELERY_IMPORTS = (
-    #     'tap_list_providers.tasks',
-    #     'beers.tasks',
-    # )
-
-    # TWITTER_CONSUMER_KEY = os.environ.get('TWITTER_CONSUMER_KEY')
-    # TWITTER_CONSUMER_SECRET = os.environ.get('TWITTER_CONSUMER_SECRET')
-    # TWITTER_ACCESS_TOKEN_KEY = os.environ.get('TWITTER_ACCESS_TOKEN_KEY')
-    # TWITTER_ACCESS_TOKEN_SECRET = os.environ.get('TWITTER_ACCESS_TOKEN_SECRET')
