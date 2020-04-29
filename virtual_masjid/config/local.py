@@ -6,16 +6,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 class Local(Common):
     DEBUG = True
 
-    DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('dbname'),
-        'USER': os.environ.get('dbuser'),
-        'PASSWORD': os.environ.get('dbpass'),
-        'HOST': os.environ.get('dbhost'),
-        'PORT': os.environ.get('dbport')
-        }
-    }
+    # DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': os.environ.get('dbname'),
+    #     'USER': os.environ.get('dbuser'),
+    #     'PASSWORD': os.environ.get('dbpass'),
+    #     'HOST': os.environ.get('dbhost'),
+    #     'PORT': os.environ.get('dbport')
+    #     }
+    # }
 
     # Mail
     EMAIL_HOST = 'localhost'
