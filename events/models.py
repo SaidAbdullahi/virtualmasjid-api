@@ -3,7 +3,7 @@ from django.db import models
 
 class Event(models.Model):
     venue = models.ForeignKey(
-        'venues.Venue', models.CASCADE, related_name='events',
+        'venues.Venue', models.CASCADE, related_name='events', blank=True, null=True,
     )
     class Recurrence(models.TextChoices):
         ONCE =  "Once"

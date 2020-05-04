@@ -1,8 +1,11 @@
 from rest_framework.viewsets import ModelViewSet
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
 
 from . import models
 from . import serializers
 from . import filters
+
 
 class EventViewSet(ModelViewSet):
 
@@ -11,3 +14,9 @@ class EventViewSet(ModelViewSet):
         'startDate', 'eventTime','venue__name',
     )
     filterset_class = filters.EventFilterSet
+
+
+class CachedListMixin():
+    @method_decorator(cache_page(60 * 5))
+    def list(self, request, *args, **kwargs):
+        return super().list(request, *args, **kwargs)

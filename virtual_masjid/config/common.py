@@ -72,7 +72,8 @@ class Common(Configuration):
     # Postgres
     DATABASES = {
         'default': dj_database_url.config(
-            default='postgres://postgres:@postgres:5432/postgres',
+            # default='postgres://postgres:@postgres:5432/postgres',
+            default='postgres://'+os.environ.get('dbuser')+':'+os.environ.get('dbpass')+'@localhost:5432'+'/'+os.environ.get('dbname'),
             conn_max_age=int(os.getenv('POSTGRES_CONN_MAX_AGE', 600))
         )
     }
