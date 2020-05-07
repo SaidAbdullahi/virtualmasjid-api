@@ -10,7 +10,7 @@ from configurations import importer  # noqa: E402 isort:skip
 if not importer.installed:  # noqa: E402 isort:skip
     importer.install()
 
-app = Celery('proj')
+app = Celery('virtualmasjid')
 
 # Using a string here means the worker doesn't have to serialize
 # the configuration object to child processes.
