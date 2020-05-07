@@ -11,8 +11,8 @@ class Venue(models.Model):
 
     name = models.CharField(max_length=50, unique=True)
     address = models.CharField(max_length=50, blank=True)
-    city = models.CharField(max_length=50, blank=True)
-    country = CountryField(blank=True)
+    city = models.CharField(max_length=50)
+    country = models.CharField(max_length=50)
     website = models.URLField(blank=True)
     facebook_page = models.URLField(blank=True)
     twitter_handle = models.CharField(blank=True, max_length=25)

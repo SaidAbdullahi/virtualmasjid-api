@@ -17,7 +17,8 @@ class Event(models.Model):
         choices=Recurrence.choices,
         default=Recurrence.ONCE
     )
-    eventTime = models.TimeField()
+    startTime = models.TimeField()
+    endTime = models.TimeField()
     startDate = models.DateField()
     endDate = models.DateField()
     timezone = models.CharField(max_length = 10)

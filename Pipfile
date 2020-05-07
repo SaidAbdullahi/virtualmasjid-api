@@ -34,6 +34,7 @@ python-twitter = "*"
 whitenoise = "*"
 gspread = "*"
 oauth2client = "*"
+pandas = "*"
 
 [dev-packages]
 ipdb = "*"
