@@ -69,4 +69,4 @@ class Production(Common):
 
     SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 
-    # CACHES = get_cache()
+    CACHES = get_cache()
