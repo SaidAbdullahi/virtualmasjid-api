@@ -7,7 +7,8 @@ from venues.models import Venue
 
 @shared_task(ignore_result=True)
 def create_new_events():
-    gc = gspread.service_account(os.environ.get('SERVICE_ACCOUNT'))
+    try:
+        gc = gspread.service_account(os.environ.get('SERVICE_ACCOUNT'))
     worksheet = gc.open("Class / Lecture Tracker").sheet1
     letters = list(string.ascii_uppercase[0:16])
     cell_list = [letter+'4:'+letter for letter in letters]
