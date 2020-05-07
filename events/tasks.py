@@ -4,12 +4,12 @@ import gspread
 from celery import shared_task
 from events.models import Event
 from venues.models import Venue 
-from oauth2client.client import GoogleCredentials
+from oauth2client.service_account import ServiceAccountCredentials
 
 @shared_task(ignore_result=True)
 def create_new_events():
 
-    credentials = GoogleCredentials.from_json(os.environ.get('GOOGLE_CREDENTIALS'))
+    credentials = ServiceAccountCredentials.from_json_keyfile_dict(os.environ.get('GOOGLE_CREDENTIALS'))
     gc = gspread.authorize(credentials)
     worksheet = gc.open("Class / Lecture Tracker").sheet1
     letters = list(string.ascii_uppercase[0:16])
