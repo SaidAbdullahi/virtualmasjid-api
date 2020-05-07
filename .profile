@@ -1,1 +1,1 @@
-echo ${SERVICE_ACCOUNT} > /virtualmasjid/virtual-masjid-cfa0b8ee7f2c.json
+echo ${GOOGLE_CREDENTIALS} > /virtualmasjid/virtual-masjid-cfa0b8ee7f2c.json
