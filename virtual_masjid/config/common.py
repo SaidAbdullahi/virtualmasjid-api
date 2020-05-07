@@ -66,7 +66,7 @@ class Common(Configuration):
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
     ADMINS = (
-        ('Author', ''),
+        ('Author', 'virtualonlinemasjid@gmail.com'),
     )
 
     # Postgres
@@ -221,6 +221,3 @@ class Common(Configuration):
             'django_filters.rest_framework.DjangoFilterBackend',
         ),
     }
-
-    # Default Venue time zone
-    DEFAULT_VENUE_TIME_ZONE = 'Africa/Nairobi'

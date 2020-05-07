@@ -42,7 +42,6 @@ class VenueViewSet(CachedListMixin, ModelViewSet):
             })
         queryset = EventViewSet.queryset.filter(**filter_cond).distinct()
 
-        # let the user use all the beer filters just for kicks
         queryset = EventFilterSet(request.query_params, queryset=queryset).qs
 
         page = self.paginate_queryset(queryset)
