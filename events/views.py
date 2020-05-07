@@ -15,8 +15,8 @@ class EventViewSet(ModelViewSet):
     queryset = models.Event.objects.select_related('venue').order_by(
         'startDate', 'eventTime','venue__name',)
     filterset_class = filters.EventFilterSet
-    send_date = datetime.utcnow() + timedelta(hours=24)
-    create_new_events.apply_async(eta=send_date)
+    # send_date = datetime.utcnow() + timedelta(hours=24)
+    # create_new_events.apply_async(eta=send_date)
 
 class CachedListMixin():
     @method_decorator(cache_page(60 * 5))
