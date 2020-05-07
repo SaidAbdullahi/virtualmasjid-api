@@ -13,7 +13,6 @@ class Venue(models.Model):
     address = models.CharField(max_length=50, blank=True)
     city = models.CharField(max_length=50, blank=True)
     country = CountryField(blank=True)
-    time_zone = TimeZoneField(default=settings.DEFAULT_VENUE_TIME_ZONE)
     website = models.URLField(blank=True)
     facebook_page = models.URLField(blank=True)
     twitter_handle = models.CharField(blank=True, max_length=25)

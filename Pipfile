@@ -32,6 +32,7 @@ django-bmemcached = "*"
 python-binary-memcached = "*"
 python-twitter = "*"
 whitenoise = "*"
+gspread = "*"
 
 [dev-packages]
 ipdb = "*"
