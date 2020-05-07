@@ -221,3 +221,10 @@ class Common(Configuration):
             'django_filters.rest_framework.DjangoFilterBackend',
         ),
     }
+    
+    # Celery info
+    CELERY_BROKER_URL = os.environ.get('REDIS_URL', 'redis://redis:6379/')
+    CELERY_RESULT_BACKEND = CELERY_BROKER_URL
+    CELERY_IMPORTS = (
+        'events.tasks',
+    )
