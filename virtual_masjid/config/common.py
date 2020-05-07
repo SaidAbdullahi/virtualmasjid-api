@@ -223,7 +223,7 @@ class Common(Configuration):
     }
     
     # Celery info
-    CELERY_BROKER_URL = os.environ.get('REDIS_URL', 'redis://redis:6379/')
+    CELERY_BROKER_URL = os.environ.get('CLOUDAMQP_URL')
     CELERY_RESULT_BACKEND = CELERY_BROKER_URL
     CELERY_IMPORTS = (
         'events.tasks',
