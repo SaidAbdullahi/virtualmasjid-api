@@ -33,6 +33,7 @@ python-binary-memcached = "*"
 python-twitter = "*"
 whitenoise = "*"
 gspread = "*"
+oauth2client = "*"
 
 [dev-packages]
 ipdb = "*"
